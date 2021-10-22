@@ -15,6 +15,7 @@ public class Movement : MonoBehaviour
     {
         Moving();
         shoot();
+        Debug.Log("D");
     }
 
     void Moving()
