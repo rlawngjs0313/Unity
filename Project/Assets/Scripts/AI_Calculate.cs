@@ -24,7 +24,8 @@ public class AI_Calculate : MonoBehaviour
             Vector3 calcu_Degreed = new Vector3(Mathf.Cos(core.Degree) * speed, Mathf.Sin(core.Degree) * speed);
             rigidbody.AddForce(calcu_Degreed);
             core.is_shoot = false;
-            core.doubleclick = true;
+            core.doubleclick = true;    
+            Debug.Log("D");
         }
     }
 }
