@@ -6,7 +6,9 @@ public class AI_Calculate : MonoBehaviour
 {
     Core core;
     new Rigidbody rigidbody;
-    int speed = 1000;
+    float Degree = 45.0f;
+    int speed = 100;
+    int doubleclick = 0;
     void Start()
     {
         core = GameObject.Find("GameSystem").GetComponent<Core>();
@@ -19,12 +21,11 @@ public class AI_Calculate : MonoBehaviour
     }
     void Shoot()
     {
-        if(core.is_shoot == true)
+        if(doubleclick == 0)
         {
-            Vector3 calcu_Degreed = new Vector3(Mathf.Cos(core.Degree) * speed, Mathf.Sin(core.Degree) * speed);
+            doubleclick ++;
+            Vector3 calcu_Degreed = new Vector3(Mathf.Cos(Degree) * speed, Mathf.Sin(Degree) * speed);
             rigidbody.AddForce(calcu_Degreed);
-            core.is_shoot = false;
-            core.doubleclick = true;
         }
     }
 }
