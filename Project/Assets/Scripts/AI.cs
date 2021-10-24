@@ -11,8 +11,8 @@ public class AI : MonoBehaviour
     new Rigidbody rigidbody;
     public GameObject bullet;
     public Transform trans;
-    bool moved = false;
-    int doubleclick = 0;
+    public bool moved = false;
+    public int doubleclick = 0;
     void Start()
     {
         core = GameObject.Find("GameSystem").GetComponent<Core>();

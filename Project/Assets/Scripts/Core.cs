@@ -11,12 +11,17 @@ public class Core : MonoBehaviour
     public bool is_shoot = false;
     public bool is_hit = false;
     public bool is_fail = false;
+    public bool is_hit_AI = false;
+    public bool is_fail_AI = false;
     public bool doubleclick = false;
+    public int dc_cal = 0;
     public bool timeover = false;
     public bool ismyturn = true;
     public Vector3 pos2;
     public Vector3 pos1;
     T t;
+    AI aI;
+    GameObject AI_Bullet;
     private void Awake()
     {
         
@@ -24,15 +29,16 @@ public class Core : MonoBehaviour
     void Start()
     {
         t = GameObject.Find("Timer").GetComponent<T>();
+        aI = GameObject.Find("EnemyAI").GetComponent<AI>();
     }
 
     void Update()
     {
-        myturn();
+        initialized();
         Reset();
     }
 
-    void myturn()
+    void initialized()
     {
         if (is_hit == true)
         {
@@ -52,6 +58,23 @@ public class Core : MonoBehaviour
             is_fail = false;
             doubleclick = false;
             t.timer.text = "Time Remaining : " + t.time.ToString("F0");
+        }
+        if(is_hit_AI == true)
+        {
+            is_hit_AI = false;
+            score --;
+            dc_cal --;
+            aI.doubleclick --;
+            aI.moved = false;
+            ismyturn = true;
+        }
+        if(is_fail_AI == true)
+        {
+            is_fail_AI = false;
+            dc_cal --;
+            aI.doubleclick --;
+            aI.moved = false;
+            ismyturn = true;
         }
     }
     void Reset()
