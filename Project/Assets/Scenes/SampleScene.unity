@@ -1741,7 +1741,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc184911efe67449a657d9ff7ec48dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 7480368781476507616, guid: f45d91a05e7315a4e9f115c06c75ec23, type: 3}
+  bullet: {fileID: 8561346236659247450, guid: f45d91a05e7315a4e9f115c06c75ec23, type: 3}
   shoots: {fileID: 1878261012}
 --- !u!54 &1919520416
 Rigidbody:
@@ -1757,7 +1757,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 120
   m_CollisionDetection: 0
 --- !u!136 &1919520417
 CapsuleCollider:

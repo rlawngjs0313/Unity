@@ -9,10 +9,10 @@ public class AI : MonoBehaviour
     NavMeshAgent nav;
     AI_Calculate ai;
     new Rigidbody rigidbody;
-    int doubleclick = 0;
-    bool moved = false;
     public GameObject bullet;
-    public Transform shoots;
+    public Transform trans;
+    bool moved = false;
+    int doubleclick = 0;
     void Start()
     {
         core = GameObject.Find("GameSystem").GetComponent<Core>();
@@ -22,7 +22,7 @@ public class AI : MonoBehaviour
     void Update()
     {
         move();
-        shoot();
+        Shoot();
     }
     void move()
     {
@@ -30,19 +30,17 @@ public class AI : MonoBehaviour
         {
             nav.SetDestination(core.pos2);
             if(nav.remainingDistance == 0)
-            {
                 moved = true;
-            }
         }
     }
-    void shoot()
+    void Shoot()
     {
         if(moved == true)
         {
             if(doubleclick == 0)
             {
                 doubleclick ++;
-                Instantiate(bullet, shoots);
+                Instantiate(bullet, trans);
             }
         }
     }

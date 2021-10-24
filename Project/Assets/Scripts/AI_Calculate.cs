@@ -6,8 +6,8 @@ public class AI_Calculate : MonoBehaviour
 {
     Core core;
     new Rigidbody rigidbody;
-    float Degree = 45.0f;
-    int speed = 100;
+    public float Degree = 45.0f;
+    int speed = 1000;
     int doubleclick = 0;
     void Start()
     {
@@ -22,10 +22,18 @@ public class AI_Calculate : MonoBehaviour
     void Shoot()
     {
         if(doubleclick == 0)
-        {
+       {
             doubleclick ++;
             Vector3 calcu_Degreed = new Vector3(Mathf.Cos(Degree) * speed, Mathf.Sin(Degree) * speed);
             rigidbody.AddForce(calcu_Degreed);
+            core.is_shoot = false;
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Plane")
+        {
+            Object.Destroy(this.gameObject);
         }
     }
 }
