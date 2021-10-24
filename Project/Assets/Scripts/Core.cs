@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Core : MonoBehaviour
 {
@@ -16,6 +17,10 @@ public class Core : MonoBehaviour
     public Vector3 pos2;
     public Vector3 pos1;
     T t;
+    private void Awake()
+    {
+        
+    }
     void Start()
     {
         t = GameObject.Find("Timer").GetComponent<T>();
@@ -24,6 +29,7 @@ public class Core : MonoBehaviour
     void Update()
     {
         myturn();
+        Reset();
     }
 
     void myturn()
@@ -46,6 +52,13 @@ public class Core : MonoBehaviour
             is_fail = false;
             doubleclick = false;
             t.timer.text = "Time Remaining : " + t.time.ToString("F0");
+        }
+    }
+    void Reset()
+    {
+        if(Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene("#1");
         }
     }
 }

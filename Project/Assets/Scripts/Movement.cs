@@ -46,6 +46,7 @@ public class Movement : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
+                core.Speed = 0;
                 if (core.doubleclick == false)
                 {
                     core.is_shoot = true;
@@ -54,6 +55,7 @@ public class Movement : MonoBehaviour
             }
             if (core.timeover == true)
             {
+                core.Speed = 0;
                 if (core.doubleclick == false)
                 {
                     core.is_shoot = true;
