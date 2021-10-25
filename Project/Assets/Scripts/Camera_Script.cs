@@ -31,9 +31,9 @@ public class Camera_Script : MonoBehaviour
         }
         if(core.ismyturn != true)
         {
-            transform.position = AIPos.transform.position + new Vector3(0, 0, -20);
+            transform.position = AIPos.transform.position + new Vector3(-0.62f, 0, -20);
         }
         if(GameObject.FindWithTag("Bullet_AI"))
-            transform.position = GameObject.FindWithTag("Bullet_AI").transform.position + new Vector3(0, 0, -20);
+            transform.position = GameObject.FindWithTag("Bullet_AI").transform.position + new Vector3(-0.62f, 0, -20);
     }
 }
