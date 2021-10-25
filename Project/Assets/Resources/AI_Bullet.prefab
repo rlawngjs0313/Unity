@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88971a7bcf96ee14fbd85b736bc52b28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Degree: 45.2
+  Degree: 45
 --- !u!96 &4522016041733625072
 TrailRenderer:
   serializedVersion: 2

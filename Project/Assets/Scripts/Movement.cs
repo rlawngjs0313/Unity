@@ -32,10 +32,12 @@ public class Movement : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 core.Degree += 0.05f;
+                core.Text_Deg += 3.5f;
             }
             if (Input.GetKeyDown(KeyCode.DownArrow))
             {
                 core.Degree -= 0.05f;
+                core.Text_Deg -= 3.5f;
             }
         }
     }

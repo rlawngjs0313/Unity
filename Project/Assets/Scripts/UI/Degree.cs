@@ -14,6 +14,6 @@ public class Degree : MonoBehaviour
 
     void Update()
     {
-        degr.text = "Degree : " + core.Degree.ToString("F2");
+        degr.text = "Degree : " + core.Text_Deg.ToString("F0");
     }
 }

@@ -7,7 +7,7 @@ public class AI_Calculate : MonoBehaviour
     Core core;
     AI ai;
     new Rigidbody rigidbody;
-    public float Degree = 45.0f;
+    float Degree = 0f;
     int speed = 1000;
     void Start()
     {
@@ -24,6 +24,7 @@ public class AI_Calculate : MonoBehaviour
         if(core.dc_cal == 0)
        {
             core.dc_cal ++;
+            Degree = (46.1f - core.Degree) + 45f;
             Vector3 calcu_Degreed = new Vector3(Mathf.Cos(Degree) * speed, Mathf.Sin(Degree) * speed);
             rigidbody.AddForce(calcu_Degreed);
         }

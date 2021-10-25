@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Core : MonoBehaviour
 {
-    public float Degree = 45.0f;
+    public float Degree = 44.2f;
+    public float Text_Deg = 0f;
     public float Speed = 10f;
     public int score = 0;
     public bool is_shoot = false;
