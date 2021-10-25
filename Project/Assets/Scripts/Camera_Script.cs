@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Camera : MonoBehaviour
+public class Camera_Script : MonoBehaviour
 {
     public GameObject PlayerPos;
-    public Vector3 BulletPos;
+    public GameObject AIPos;
+    AI ai;
     Core core;
     void Start()
     {
         core = GameObject.Find("GameSystem").GetComponent<Core>();
+        ai = GameObject.Find("EnemyAI").GetComponent<AI>();
     }
 
     void Update()
@@ -25,13 +27,13 @@ public class Camera : MonoBehaviour
         }
         if (GameObject.FindWithTag("Bullet"))
         {
-            BulletPos = GameObject.FindWithTag("Bullet").transform.position;
-            BulletPos += new Vector3(0, 0, -20);
-            transform.position = BulletPos;
+            transform.position = GameObject.FindWithTag("Bullet").transform.position + new Vector3(0, 0, -20);
         }
         if(core.ismyturn != true)
         {
-            transform.position += GameObject.FindWithTag("Enemy").transform.position;
+            transform.position = AIPos.transform.position + new Vector3(0, 0, -20);
         }
+        if(GameObject.FindWithTag("Bullet_AI"))
+            transform.position = GameObject.FindWithTag("Bullet_AI").transform.position + new Vector3(0, 0, -20);
     }
 }
