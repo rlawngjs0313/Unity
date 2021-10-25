@@ -24,9 +24,21 @@ public class AI_Calculate : MonoBehaviour
         if(core.dc_cal == 0)
        {
             core.dc_cal ++;
-            Degree = (46.1f - core.Degree) + 45f;
+            level();
             Vector3 calcu_Degreed = new Vector3(Mathf.Cos(Degree) * speed, Mathf.Sin(Degree) * speed);
             rigidbody.AddForce(calcu_Degreed);
+        }
+    }
+
+    void level()
+    {
+        if(core.score >= 3)
+        {
+            Degree = (46.1f - core.Degree) + 45f;
+        }
+        if(core.score < 3)
+        {
+            Degree = core.Degree + Random.Range(0.55f, 1.9f);
         }
     }
     private void OnTriggerEnter(Collider other)
