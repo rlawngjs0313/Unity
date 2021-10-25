@@ -32,11 +32,11 @@ public class AI_Calculate : MonoBehaviour
 
     void level()
     {
-        if(core.score >= 3)
+        if(core.score >= 4)
         {
             Degree = (46.1f - core.Degree) + 45f;
         }
-        if(core.score < 3)
+        if(core.score <= 3)
         {
             Degree = core.Degree + Random.Range(0.55f, 1.9f);
         }
