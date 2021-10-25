@@ -229,6 +229,7 @@ GameObject:
   - component: {fileID: 251099726}
   - component: {fileID: 251099728}
   - component: {fileID: 251099727}
+  - component: {fileID: 251099729}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -301,6 +302,20 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &251099729
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 251099725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c51264300aac0304da5cac91a528e85f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerPos: {fileID: 510831063}
+  AIPos: {fileID: 1919520414}
 --- !u!1 &309268214
 GameObject:
   m_ObjectHideFlags: 0
@@ -874,7 +889,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 519.3, y: -239.9}
+  m_AnchoredPosition: {x: 497.9, y: -213.9}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &672168246
@@ -891,6 +906,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   time: 20
   timer: {fileID: 672168247}
+  loop: 0
 --- !u!114 &672168247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -968,7 +984,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.2, y: 223.5}
+  m_AnchoredPosition: {x: 11.1, y: 215.43}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1155657868
@@ -1061,7 +1077,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -504.21, y: -241}
+  m_AnchoredPosition: {x: -475.2, y: -213.9}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1410210564
@@ -1190,7 +1206,7 @@ Canvas:
   m_RenderMode: 0
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
@@ -1729,7 +1745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfc184911efe67449a657d9ff7ec48dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 8561346236659247450, guid: f45d91a05e7315a4e9f115c06c75ec23, type: 3}
+  bullet: {fileID: 700227496926232654, guid: f45d91a05e7315a4e9f115c06c75ec23, type: 3}
   trans: {fileID: 1878261012}
   moved: 0
   doubleclick: 0

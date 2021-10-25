@@ -8,7 +8,7 @@ public class T : MonoBehaviour
     public float time = 20f;
     public Text timer;
     Core core;
-    int loop = 0;
+    public int loop = 0;
     void Start()
     {
         core = GameObject.Find("GameSystem").GetComponent<Core>();

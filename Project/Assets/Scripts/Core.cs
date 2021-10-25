@@ -65,6 +65,7 @@ public class Core : MonoBehaviour
             score --;
             dc_cal --;
             aI.doubleclick --;
+            t.loop = 0;
             aI.moved = false;
             ismyturn = true;
         }
@@ -73,6 +74,7 @@ public class Core : MonoBehaviour
             is_fail_AI = false;
             dc_cal --;
             aI.doubleclick --;
+            t.loop = 0;
             aI.moved = false;
             ismyturn = true;
         }
