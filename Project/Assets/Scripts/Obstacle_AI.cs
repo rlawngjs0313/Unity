@@ -3,31 +3,23 @@ using UnityEngine.AI;
 
 public class Obstacle_AI : MonoBehaviour
 {
-    Core core;
+    int Random_num = 0;
     NavMeshAgent nav;
-    int test = 0;
     private void Start() 
     {
-        core = GameObject.Find("GameSystem").GetComponent<Core>();
         nav = GetComponent<NavMeshAgent>();
-        test = Random.Range(-100, 100);
-        transform.position = new Vector3(test, 1, 0);
+        Random_num = Random.Range(-20, 20);
+        transform.position = new Vector3(Random.Range(-100, 100), 1, 0);
     }
     private void Update() 
     {
-        move();
+        spawn();
     }
-    void move()
+    void spawn()
     {
-        if(test >= 0)
-            Debug.Log(test);
-        if(transform.position.x > -12)            
-        {
-            if(transform.position.x < 12)
-            {
-                Object.Destroy(this);
-                transform.position = new Vector3(Random.Range(-100, 100), 1, 0);
-            }
-        }
+        if(transform.position.x <= -11)
+            nav.SetDestination(GameObject.Find("Player").transform.position - new Vector3(Random_num, 0, 0));
+        if(transform.position.x >= 11)
+            nav.SetDestination(GameObject.Find("EnemyAI").transform.position - new Vector3(Random_num, 0, 0));
     }
 }
