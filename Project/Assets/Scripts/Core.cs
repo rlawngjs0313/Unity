@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Core : MonoBehaviour
 {
@@ -9,23 +10,26 @@ public class Core : MonoBehaviour
     public float Text_Deg = 0f;
     public float Speed = 10f;
     public int score = 0;
+    public int dc_cal = 0;
+    public int Endgame = 0;
     public bool is_shoot = false;
     public bool is_hit = false;
     public bool is_fail = false;
     public bool is_hit_AI = false;
     public bool is_fail_AI = false;
     public bool doubleclick = false;
-    public int dc_cal = 0;
     public bool timeover = false;
     public bool ismyturn = true;
     public Vector3 pos2;
     public Vector3 pos1;
+    public Text win_lose;
+    public GameObject texts;
     T t;
     AI aI;
     GameObject AI_Bullet;
     private void Awake()
     {
-        
+        texts.SetActive(false);
     }
     void Start()
     {
@@ -37,6 +41,7 @@ public class Core : MonoBehaviour
     {
         initialized();
         Reset();
+        Winning();
     }
 
     void initialized()
@@ -85,6 +90,21 @@ public class Core : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.R))
         {
             SceneManager.LoadScene("#1");
+        }
+    }
+    void Winning()
+    {
+        if(score >= 3)
+        {
+            Endgame ++;
+            win_lose.text = "You Win";
+            texts.SetActive(true);
+        }
+        if(score < 0)
+        {
+            Endgame ++;
+            win_lose.text = "You Lose";
+            texts.SetActive(true);
         }
     }
 }

@@ -21,8 +21,11 @@ public class AI : MonoBehaviour
     }
     void Update()
     {
-        move();
-        Shoot();
+        if(core.Endgame == 0)
+        {
+            move();
+            Shoot();
+        }
     }
     void move()
     {
