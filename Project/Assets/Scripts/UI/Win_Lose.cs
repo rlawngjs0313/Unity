@@ -3,12 +3,13 @@ using UnityEngine.UI;
 
 public class Win_Lose : MonoBehaviour
 {
-    public Text win;
-    public Text lose;
+    public Text win_lose;
+    public GameObject texts;
     Core core;
     private void Start()
     {
         core = GameObject.Find("GameSystem").GetComponent<Core>();
+        texts.SetActive(false);
     }
     private void Update()
     {
@@ -18,11 +19,14 @@ public class Win_Lose : MonoBehaviour
     {
         if(core.score == 3)
         {
-            win.text = "You Win";
+            Debug.Log(("D"));
+            win_lose.text = "You Win";
+            texts.SetActive(true);
         }
         if(core.score < 0)
         {
-            lose.text = "You Lose";
+            win_lose.text = "You Lose";
+            texts.SetActive(true);
         }
     }
 }
