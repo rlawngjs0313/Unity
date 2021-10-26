@@ -845,17 +845,20 @@ MonoBehaviour:
   Text_Deg: 45
   Speed: 10
   score: 0
+  dc_cal: 0
+  Endgame: 0
   is_shoot: 0
   is_hit: 0
   is_fail: 0
   is_hit_AI: 0
   is_fail_AI: 0
   doubleclick: 0
-  dc_cal: 0
   timeover: 0
   ismyturn: 1
   pos2: {x: 0, y: 0, z: 0}
   pos1: {x: 0, y: 0, z: 0}
+  win_lose: {fileID: 1798301226}
+  texts: {fileID: 1798301224}
 --- !u!1 &672168244
 GameObject:
   m_ObjectHideFlags: 0
@@ -1586,7 +1589,6 @@ GameObject:
   - component: {fileID: 1798301225}
   - component: {fileID: 1798301227}
   - component: {fileID: 1798301226}
-  - component: {fileID: 1798301228}
   m_Layer: 5
   m_Name: Gameover
   m_TagString: Untagged
@@ -1656,20 +1658,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1798301224}
   m_CullTransparentMesh: 1
---- !u!114 &1798301228
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1798301224}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62c0d44a95ca39f428006a9a596ab163, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  win_lose: {fileID: 1798301226}
-  texts: {fileID: 1798301224}
 --- !u!1 &1827670968
 GameObject:
   m_ObjectHideFlags: 0
