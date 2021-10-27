@@ -7,11 +7,12 @@ using UnityEngine.UI;
 public class Core : MonoBehaviour
 {
     public float Degree = 45f;
-    public float Text_Deg = 0f;
+    public float Text_Deg = 45f;
     public float Speed = 10f;
     public int score = 0;
     public int dc_cal = 0;
     public int Endgame = 0;
+    public bool is_touch_Obstacle = false;
     public bool is_shoot = false;
     public bool is_hit = false;
     public bool is_fail = false;

@@ -28,6 +28,16 @@ public class AI_Calculate : MonoBehaviour
             Vector3 calcu_Degreed = new Vector3(Mathf.Cos(Degree) * speed, Mathf.Sin(Degree) * speed);
             rigidbody.AddForce(calcu_Degreed);
         }
+        if(core.is_touch_Obstacle == true)
+        {
+            if(core.dc_cal == 0)
+            {
+                core.dc_cal ++;
+                Degree = Random.Range(44.2f, 45.55f);
+                Vector3 calcu_Degreed = new Vector3(Mathf.Cos(Degree) * speed, Mathf.Sin(Degree) * speed);
+                rigidbody.AddForce(calcu_Degreed);
+            }
+        }
     }
 
     void level()
@@ -47,11 +57,13 @@ public class AI_Calculate : MonoBehaviour
         {
             Object.Destroy(this.gameObject);
             core.is_fail_AI = true;
+            core.is_touch_Obstacle = false;
         }
         if(other.tag == "Player")
         {
             Object.Destroy(this.gameObject);
             core.is_hit_AI = true;
+            core.is_touch_Obstacle = false;
         }
     }
 }

@@ -26,6 +26,8 @@ public class Calculate : MonoBehaviour
             rigidbody.AddForce(calcu_Degreed);
             core.is_shoot = false;
             core.doubleclick = true;
+            core.Degree = 45f;
+            core.Text_Deg = 45f;
         }
     }
 

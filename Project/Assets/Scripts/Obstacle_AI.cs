@@ -30,6 +30,7 @@ public class Obstacle_AI : MonoBehaviour
         if(other.name == "Player")
         {
             core.timeover = true;
+            core.Degree = Random.Range(44.2f, 45.55f);
         }
     }
 }
