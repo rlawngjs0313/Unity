@@ -3,23 +3,33 @@ using UnityEngine.AI;
 
 public class Obstacle_AI : MonoBehaviour
 {
-    int Random_num = 0;
+    public GameObject pos1;
+    public GameObject pos2;
     NavMeshAgent nav;
+    Core core;
     private void Start() 
     {
         nav = GetComponent<NavMeshAgent>();
-        Random_num = Random.Range(-20, 20);
-        transform.position = new Vector3(Random.Range(-100, 100), 1, 0);
+        core = GameObject.Find("GameSystem").GetComponent<Core>();
+        transform.position = pos1.transform.position;
     }
     private void Update() 
     {
-        spawn();
+        
     }
-    void spawn()
+    private void OnTriggerEnter(Collider other)
     {
-        if(transform.position.x <= -11)
-            nav.SetDestination(GameObject.Find("Player").transform.position - new Vector3(Random_num, 0, 0));
-        if(transform.position.x >= 11)
-            nav.SetDestination(GameObject.Find("EnemyAI").transform.position - new Vector3(Random_num, 0, 0));
+        if(other.name == "Obstacle_target_1")
+        {
+            nav.SetDestination(pos2.transform.position);
+        }
+        if(other.name == "Obstacle_target_2")
+        {
+            nav.SetDestination(pos1.transform.position);
+        }
+        if(other.name == "Player")
+        {
+            core.timeover = true;
+        }
     }
 }
