@@ -46,6 +46,7 @@ public class Movement : MonoBehaviour
     {
         if(core.ismyturn == true)
         {
+            Debug.Log("S");
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 core.Speed = 0;
